@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISGECU</title>
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    </head>
+<body class="d-flex flex-column min-vh-100 bg-body-secondary">
+
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand text-warning ms-3" href="#">
+                <img src="IMG/IUB.svg" alt="Logo" width="40" height="24" class="d-inline-block align-text-top me-2">
+                Inicio
+            </a>
+            </div>
+    </nav>
+
+
+    <div class="d-flex flex-grow-1 min-vh-100">
+        <main class="flex-grow-1 p-3">
+            <div class="container-fluid my-0">
+                <div class="row">
+                    <h2>¿Qué es SISGECU?</h2>
+                    <div class=" container-fluid col-12 col-sm-12 col-lg-12 my-2 border-top border-warning">
+                        <p>SISGECU (Sistema de Gestión de Comedor Universitario) es una plataforma digital desarrollada para optimizar y modernizar el proceso de entrega de alimentos a los estudiantes beneficiarios de la ayuda alimentaria en la universidad. Este sistema nace como una respuesta a los desafíos recurrentes de desorganización, falta de control, largas filas y ausencia de registros confiables en los comedores institucionales.</p>
+                    </div>
+
+                    <h2>¿Cómo nace el proyecto?</h2>
+                    <div class=" container-fluid col-12 col-sm-12 col-lg-12 my-2 border-top border-warning">
+                        <p>SISGECU surge de la necesidad identificada por estudiantes y docentes de mejorar la eficiencia en la entrega de almuerzos. Durante mucho tiempo, el proceso fue manual, propenso a errores y poco transparente. A partir de esta problemática, nace la idea de crear un sistema seguro, accesible y automatizado, que beneficie tanto a los administradores como a los estudiantes y repartidores.</p>
+                    </div>
+
+                    
+                    <div class=" container-fluid col-12 col-sm-6 col-lg-4 my-2">
+                        <h2>Tecnologías utilizadas</h2>
+                        <p>Frontend: HTML, JavaScript, Bootstrap</p>
+                        <p>Backend: FastAPI</p>
+                        <p>Base de Datos: MySQL</p>
+                        <p>Otras integraciones: Códigos QR, JSONBin, autenticación básica</p>
+                    </div>
+
+                    <div class=" container-fluid row col-sm-6 col-lg-8 my-2">
+                        <h2>Objetivo principal</h2>
+                        <p>Ofrecer una gestión integral del comedor universitario que permita: Registrar y autenticar estudiantes mediante código QR. Llevar un control en tiempo real de entregas realizadas. Generar reportes para análisis y toma de decisiones. Facilitar la comunicación entre estudiantes, repartidores y administradores..</p>
+                    </div>
+
+                    <h2>Ingreso</h2>
+                    <div class=" container-fluid d-flex col-12 col-sm-12 col-lg-12 my-2 border-top">
+                        <div class="mx-1">
+                            <a href="../SISGECU/HTML/login.html" class="text-decoration-none">
+                                <button class="btn btn-secondary text-light mt-3" type="button">Estudiante</button>
+                            </a>
+                        </div>
+                         <div class="mx-1">
+                            <a href="../SISGECU/HTML/dashboard_repartidor.html" class="text-decoration-none">
+                                <button class="btn btn-secondary text-light mt-3" type="button">Repartidor</button>
+                            </a>
+                        </div>
+
+                        <div class="mx-1">
+                            <a href="../SISGECU/HTML/dashboard_admin.html" class="text-decoration-none">
+                                <button class="btn btn-secondary text-light mt-3" type="button">Administrador</button>
+                            </a>
+                        </div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 bg-dark w-100 mt-auto">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+               <img src="../IMG/IUB.svg" alt="" width="30px" class="mx-1">
+            </a>
+            <span class="mb-3 mb-md-0 text-light">© 2025 SISGECU, Inc</span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-body-secondary" href="#" aria-label="Instagram">
+                    <i class="bi bi-instagram text-light mx-1"></i>
+                    <i class="bi bi-facebook text-light mx-2"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
