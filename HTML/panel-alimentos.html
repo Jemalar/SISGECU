@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Alimentos</title>
+    <link rel="shortcut icon" href="../IMG/IUBLUE.svg" type="svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../CSS/bootstrap.css">
+    <link rel="stylesheet" href="../CSS/alert.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-body-secondary">
+
+    <!-- navbar top -->
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand text-warning ms-3" href="#">
+                <img src="../IMG/IUB.svg" alt="Logo" width="40" height="24" class="d-inline-block align-text-top me-2">
+                Panel de administrador
+            </a>
+            </div>
+    </nav>
+        <!-- sidebar offcanva -->
+    <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel" style="width: 250px;">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-warning" id="offcanvasSidebarLabel">
+                <img src="../IMG/IUB.svg" class="w-25 me-2" alt="Logo IUB">Comedor
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <hr class="text-white-50">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../HTML/dashboard_admin.html" class="nav-link text-light" aria-current="page">
+                        <i class="bi bi-graph-up-arrow me-2"></i> Estadisticas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/panel-estudiante.html" class="nav-link text-light">
+                        <i class="bi bi-mortarboard-fill me-2"></i> Estudiantes
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML/panel-repartidores.html" class="nav-link text-light">
+                        <i class="bi bi-person-raised-hand me-2"></i> Repartidores
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML/panel-alimentos.html" class="nav-link text-light active">
+                        <i class="bi bi-egg-fried me-2"></i> Alimentos
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML/panel-sedes" class="nav-link text-light">
+                        <i class="bi bi-buildings-fill me-2"></i> Sedes
+                    </a>
+                </li>
+            </ul>
+            <hr class="text-white-50">
+            <div class="mt-auto">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none fw-bold" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    Salir
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex flex-grow-1 min-vh-100">
+            <!-- sidebar alltime -->
+        <div class="d-none d-lg-flex flex-column flex-shrink-0 p-3 text-bg-dark min-vh-100" style="width: 250px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <img src="../IMG/IUB.svg" class="w-25 me-2" alt="Logo IUB">
+                <span class="fs-4 mx-1">Comedor</span>
+            </a>
+            <hr class="text-white-50">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="../HTML/dashboard_admin.html" class="nav-link text-light" aria-current="page">
+                        <i class="bi bi-graph-up-arrow me-2"></i> Estadisticas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../HTML/panel-estudiante.html" class="nav-link text-light ">
+                        <i class="bi bi-mortarboard-fill me-2"></i> Estudiantes
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML/panel-repartidores.html" class="nav-link text-light">
+                        <i class="bi bi-person-raised-hand me-2"></i> Repartidores
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML/panel-alimentos.html" class="nav-link text-light active">
+                        <i class="bi bi-egg-fried me-2"></i> Alimentos
+                    </a>
+                </li>
+                <li>
+                    <a href="../HTML/panel-sedes.html" class="nav-link text-light">
+                        <i class="bi bi-buildings-fill me-2"></i> Sedes
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-light">
+                        <i class="bi bi-house-fill me-2"></i> Si se te ocurre algo
+                    </a>
+                </li>
+            </ul>
+            <hr class="text-white-50">
+            <div class="mt-auto">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none fw-bold" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    Salir
+                </a>
+            </div>
+        </div>
+        <!-- menu central -->
+        <main class="flex-grow-1 p-3">
+            <div class="container-fluid my-0">
+                <h1>Acciones</h1>
+                <div class="row border-top">
+                    <!-- boton registrar -->
+                    <div class=" col-12 col-sm-12 col-lg-6 my-1"< id="btnreg">
+                        <button class="btn btn-success container mx-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#AgregarAlimento" aria-controls="AgregarAlimento">
+                            <div class=" container-fluid d-block ">
+                                    <i class="bi bi-plus-circle display-1"></i>
+                                    <h1>Registrar Alimento</h1>
+                            </div>
+                        </button>
+
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="AgregarAlimento" aria-labelledby="AgregarAlimento">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="AgregarAlimento">Agregar Alimento</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="mb-2">
+                                                <label for="txtnombre" class="form-label"><b>Nombre</b></label>
+                                                <input type="text" class="form-control" id="nombre" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtdescripcion" class="form-label"><b>Descripcion</b></label>
+                                                <input type="text" class="form-control" id="descripcion" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcantidad" class="form-label"><b>Cantidad</b></label>
+                                                <input type="text" class="form-control" id="cantidad" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcategoria" class="form-label"><b>Categoria</b></label>
+                                                <select class="form-select" id="categoria" aria-label="Default select example">
+                                                    <option selected>Elige la categoria</option>
+                                                    <option value="1">Almuerzo</option>
+                                                    <option value="2">Desayuno</option>
+                                                    <option value="3">Merienda</option>
+                                                    <option value="4">Cena</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-2">
+                                                <button type="button" class="btn btn-success" onclick="registraralimento()">Agregar</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="offcanvas">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- boton actualizar -->
+                    <div class=" col-12 col-sm-12 col-lg-6 my-1" id="btnact">
+                        <button class="btn btn-warning container text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#ActualizarAlimento" aria-controls="ActualizarAlimento">
+                        <div class=" container d-block">
+                                <i class="bi bi-arrow-up display-1"></i>
+                                <h1>Actualizar Alimento</h1>
+                        </div>
+                        </button>
+
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="ActualizarAlimento" aria-labelledby="ActualizarAlimento">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="ActualizarAlimento">Actualizar Alimento</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="mb-2">
+                                                <p>Ingrese ID y presione Buscar</p>
+                                                <label for="txtid" class="form-label"><b>ID</b></label>
+                                                <input type="text" class="form-control" id="actid" >
+                                            </div>
+                                            <div class="mb-2">
+                                                    <button type="button" class="btn btn-outline-warning" onclick="buscaractualizar()">Buscar</button>
+                                            </div>
+                                            <h4 class="text-warning">Información:</h4>
+                                            <div class="mb-2 border-top mt-2 pt-">
+                                                <label for="txtnombre" class="form-label"><b>Nombre</b></label>
+                                                <input type="text" class="form-control " id="actnombre" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtdescripcion" class="form-label"><b>Descripcion</b></label>
+                                                <input type="text" class="form-control" id="actdescripcion" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcantidad" class="form-label"><b>Cantidad</b></label>
+                                                <input type="text" class="form-control" id="actcantidad" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcategoria class="form-label"><b>Categoria</b></label>
+                                                <select class="form-select" id="actcategoria" aria-label="Default select example">
+                                                    <option selected"></option>
+                                                    <option value="1">Almuerzo</option>
+                                                    <option value="2">Desayuno</option>
+                                                    <option value="3">Merienda</option>
+                                                    <option value="4">Cena</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-2">
+                                                <button type="button" class="btn btn-warning" onclick="actualizaralimento()">Actualizar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- boton buscar -->
+                    <div class=" col-12 col-sm-12 col-lg-6 my-1" id="btnbus">
+                        <button class="btn btn-primary container text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#BuscarAlimento" aria-controls="BuscarAlimento">
+                        <div class=" container d-block">
+                                <i class="bi bi-search display-1"></i>
+                                <h1>Buscar Alimento</h1>
+                        </div>
+                        </button>
+
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="BuscarAlimento" aria-labelledby="BuscarAlimento">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="BuscarAlimento">Buscar Alimento</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="mb-2">
+                                                <p>Ingrese ID y presione consultar</p>
+                                                <label for="txtid" class="form-label"><b>ID:</b></label>
+                                                <input type="text" class="form-control" id="busid" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <button type="button" class="btn btn-primary" onclick="consultaralimentoid()">Consultar</button>
+                                            </div>
+                                            <h4 class="text-primary">Información:</h4>
+                                            <div class="mb-2 border-top mt-2 pt-">
+                                                <label for="txtnombre" class="form-label"><b>Nombre</b></label>
+                                                <input type="text" class="form-control" id="busnombre" readonly>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtdescripcion" class="form-label"><b>Descripcion</b></label>
+                                                <input type="text" class="form-control" id="busdescripcion" readonly>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcantidad" class="form-label"><b>Cantidad</b></label>
+                                                <input type="text" class="form-control" id="buscantidad" readonly>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcategoria class="form-label"><b>Categoria</b></label>
+                                                <select class="form-select disable" id="buscategoria" aria-label="Disabled select example" disabled>
+                                                    <option selected></option>
+                                                    <option value="1">Almuerzo</option>
+                                                    <option value="2">Desayuno</option>
+                                                    <option value="3">Merienda</option>
+                                                    <option value="4">Cena</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- boton eliminar -->
+                    <div class=" col-12 col-sm-12 col-lg-6 my-1" id="btnact">
+                        <button class="btn btn-danger container text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#EliminarAlimento" aria-controls="EliminarAlimento">
+                        <div class=" container d-block">
+                                <i class="bi bi-trash3 display-1"></i>
+                                <h1>Eliminar Alimento</h1>
+                        </div>
+                        </button>
+
+                        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="EliminarAlimento" aria-labelledby="EliminarAlimento">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="EliminarAlimento">Eliminar Alimento</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div>
+                                            <div class="mb-2">
+                                                <p>Ingrese ID y presione Buscar</p>
+                                                <label for="txtid" class="form-label"><b>ID</b></label>
+                                                <input type="text" class="form-control" id="deleteid" >
+                                            </div>
+                                            <div class="mb-2">
+                                                    <button type="button" class="btn btn-outline-danger" onclick="buscareliminar()">Buscar</button>
+                                            </div>
+                                            <h4 class="text-danger">Información:</h4>
+                                            <div class="mb-2 border-top mt-2 pt-">
+                                                <label for="txtnombre" class="form-label"><b>Nombre</b></label>
+                                                <input type="text" class="form-control " id="deletenombre" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtdescripcion" class="form-label"><b>Descripcion</b></label>
+                                                <input type="text" class="form-control" id="deletedescripcion" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcantidad" class="form-label"><b>Cantidad</b></label>
+                                                <input type="text" class="form-control" id="deletecantidad" required>
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="txtcategoria class="form-label"><b>Categoria</b></label>
+                                                <select class="form-select" id="deletecategoria" aria-label="Default select example" disabled>
+                                                    <option selected"></option>
+                                                    <option value="1">Almuerzo</option>
+                                                    <option value="2">Desayuno</option>
+                                                    <option value="3">Merienda</option>
+                                                    <option value="4">Cena</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-2">
+                                                <button type="button" class="btn btn-danger" onclick="eliminaralimento()">Eliminar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- boton lista de alimentos -->
+                    <div class=" col-12 col-sm-12 col-lg-12 my-1" id="btnlist">
+                        <a href="../HTML/tabla-alimentos.html">
+                        <button class="btn btn-secondary container text-light" type="button">
+                            <div class=" container d-block">
+                                    <i class="bi bi-person-plus display-1"></i>
+                                    <h1>Lista de Alimentos</h1>
+                            </div>
+                        </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- pie de pagina -->
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 bg-dark w-100 mt-auto">
+        <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap">
+               <img src="../IMG/IUB.svg" alt="" width="30px" class="mx-1">
+            </a>
+            <span class="mb-3 mb-md-0 text-light">© 2025 Company, Inc</span>
+        </div>
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3">
+                <a class="text-body-secondary" href="#" aria-label="Instagram">
+                    <i class="bi bi-instagram text-light mx-1"></i>
+                    <i class="bi bi-facebook text-light mx-2"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../JS/crudalimento.js"></script>
+    <script src="../JS/bootstrap.js"></script>
+
+</body>
+</html>

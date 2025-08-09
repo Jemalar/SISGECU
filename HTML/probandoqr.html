@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Código QR</title>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        #reader {
+            width: 500px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lector de Código QR</h1>
+    <div id="reader"></div>
+    <div id="resultado"></div>
+
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // Maneja el resultado del escaneo
+            console.log(`Código QR decodificado: ${decodedText}`);
+            document.getElementById('resultado').innerText = `Contenido del QR: ${decodedText}`;
+
+            // Detiene el lector después de la primera lectura
+            html5QrcodeScanner.stop().then(ignore => {
+                console.log("Lector detenido.");
+            }).catch(err => {
+                console.log("Error al detener el lector:", err);
+            });
+        }
+
+        function onScanFailure(error) {
+            // Maneja los errores de escaneo
+            // Por ejemplo, si el QR no es legible.
+            console.warn(`Error al escanear: ${error}`);
+        }
+
+        const html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", 
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            /* verbose= */ false
+        );
+        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+    </script>
+</body>
+</html>

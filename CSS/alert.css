@@ -1,0 +1,39 @@
+    .swal2-popup {
+      background-color: #1e2843;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .swal2-title {
+      color: #fcdf2c;
+      font-weight: 600;
+    }
+
+    .swal2-html-container {
+      color: #ffffff;
+    }
+
+    .swal2-confirm {
+      background-color: #fcdf2c !important;
+      color: #1e2843 !important;
+      font-weight: 600;
+    }
+
+    .swal2-cancel {
+      background-color: #fffce8 !important;
+      color: #1e2843 !important;
+      font-weight: 600;
+    }
+
+    .swal2-icon.swal2-warning {
+      color: #fcdf2c !important;
+      border-color: #fcdf2c !important;
+    }
+
+    :root {
+      --fondo_azul: #1e2843;
+      --amarillo: #fcdf2c
+    }
+
+ footer {
+  background-color: var(--fondo_azul);
+ }

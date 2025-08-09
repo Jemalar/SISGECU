@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Estudiante</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary p-3">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">
+        <i class="bi bi-utensils me-2"></i>Comedor IUB
+      </span>
+      <div>
+        <a href="#" class="btn btn-outline-light btn-sm me-2"><i class="bi bi-person-fill"></i> Perfil</a>
+        <a href="#" class="btn btn-outline-light btn-sm"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-4">
+    <div class="p-4 bg-light rounded-3">
+      <h2 class="mb-1">¡Bienvenido, Juan Carlos!</h2>
+      <p class="mb-0 text-muted">Código Estudiantil: 2024001234 · Ingeniería de Sistemas</p>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="bi bi-ticket-fill display-5 text-success mb-2"></i>
+            <h3 class="card-title">15</h3>
+            <p class="card-text text-muted">Bonos Disponibles</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-3 mt-md-0">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="bi bi-clipboard-check-fill display-5 text-warning mb-2"></i>
+            <h3 class="card-title">8</h3>
+            <p class="card-text text-muted">Bonos Utilizados</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-3 mt-md-0">
+        <div class="card text-center">
+          <div class="card-body">
+            <i class="bi bi-wallet2 display-5 text-primary mb-2"></i>
+            <h3 class="card-title">$45.000</h3>
+            <p class="card-text text-muted">Saldo Disponible</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-5">
+      <div class="card-header bg-primary text-white">
+        <i class="bi bi-journal-text me-2"></i>Menú de Hoy
+      </div>
+      <div class="card-body">
+        <div class="alert alert-info">
+          <i class="bi bi-clock me-2"></i>Horario de almuerzo: <strong>12:00 PM - 2:00 PM</strong>
+        </div>
+
+        <div class="list-group">
+          <label class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <i class="bi bi-egg-fried text-warning me-2"></i>
+              Almuerzo Ejecutivo - Pollo, arroz, ensalada
+            </div>
+            <span class="badge bg-success rounded-pill">1 Bono</span>
+          </label>
+          <label class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <i class="bi bi-fish text-primary me-2"></i>
+              Almuerzo Saludable - Pescado y verduras
+            </div>
+            <span class="badge bg-success rounded-pill">1 Bono</span>
+          </label>
+          <label class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <i class="bi bi-leaf text-success me-2"></i>
+              Opción Vegetariana - Lentejas, arroz y ensalada
+            </div>
+            <span class="badge bg-success rounded-pill">1 Bono</span>
+          </label>
+        </div>
+
+        <div class="d-flex gap-2 mt-4">
+          <button class="btn btn-success w-100"><i class="bi bi-check-circle me-2"></i>Redimir Bono</button>
+          <button class="btn btn-outline-primary"><i class="bi bi-calendar-check me-2"></i>Programar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
